@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWizard Documentation</title>
+    <meta name="description" content="Complete documentation for WeatherWizard app - API reference, guides, and tutorials for weather data integration.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <svg class="logo-icon" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+                        <polyline points="14,2 14,8 20,8"/>
+                    </svg>
+                    <span class="logo-text">WeatherWizard Docs</span>
+                </div>
+                <nav class="nav">
+                    <a href="#overview" class="nav-link active">Overview</a>
+                    <a href="#api" class="nav-link">API Reference</a>
+                    <a href="#guides" class="nav-link">Guides</a>
+                    <a href="#examples" class="nav-link">Examples</a>
+                </nav>
+                <div class="header-actions">
+                    <input type="search" placeholder="Search docs..." class="search-input">
+                    <a href="https://github.com/hgfghhccchgtjcdfhhhh/weatherwizard-app" target="_blank" class="github-btn">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="layout">
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Getting Started</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#introduction" class="sidebar-link active">Introduction</a></li>
+                            <li><a href="#quick-start" class="sidebar-link">Quick Start</a></li>
+                            <li><a href="#installation" class="sidebar-link">Installation</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">API Reference</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#authentication" class="sidebar-link">Authentication</a></li>
+                            <li><a href="#endpoints" class="sidebar-link">Endpoints</a></li>
+                            <li><a href="#rate-limits" class="sidebar-link">Rate Limits</a></li>
+                            <li><a href="#errors" class="sidebar-link">Error Handling</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Guides</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#weather-data" class="sidebar-link">Weather Data</a></li>
+                            <li><a href="#forecasts" class="sidebar-link">Forecasts</a></li>
+                            <li><a href="#webhooks" class="sidebar-link">Webhooks</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Resources</h3>
+                        <ul class="sidebar-menu">
+                            <li><a href="#sdks" class="sidebar-link">SDKs</a></li>
+                            <li><a href="#changelog" class="sidebar-link">Changelog</a></li>
+                            <li><a href="#support" class="sidebar-link">Support</a></li>
+                        </ul>
+                    </div>
+                </aside>
+
+                <div class="content">
+                    <section id="introduction" class="doc-section">
+                        <h1 class="doc-title">WeatherWizard Documentation</h1>
+                        <p class="doc-lead">Build powerful weather applications using OpenWeather API integration. Get real-time weather data, forecasts, and alerts for any location worldwide.</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <div class="feature-icon">🌤️</div>
+                                <h3>Real-time Weather</h3>
+                                <p>Access current weather conditions for any location with sub-minute updates.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">📊</div>
+                                <h3>Detailed Forecasts</h3>
+                                <p>Get hourly and daily forecasts up to 16 days with high accuracy predictions.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">⚡</div>
+                                <h3>Weather Alerts</h3>
+                                <p>Receive severe weather warnings and alerts for enhanced safety planning.</p>
+                            </div>
+                            <div class="feature-card">
+                                <div class="feature-icon">🗺️</div>
+                                <h3>Global Coverage</h3>
+                                <p>Worldwide weather data coverage with local accuracy and regional insights.</p>
+                            </div>
+                        </div>
+
+                        <div class="status-section">
+                            <h2>Live API Status</h2>
+                            <div class="status-grid" id="status-grid">
+                                <div class="status-item">
+                                    <div class="status-indicator loading"></div>
+                                    <div class="status-info">
+                                        <span class="status-name">API Status</span>
+                                        <span class="status-value">Checking...</span>
+                                    </div>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-indicator loading"></div>
+                                    <div class="status-info">
+                                        <span class="status-name">Response Time</span>
+                                        <span class="status-value">Measuring...</span>
+                                    </div>
+                                </div>
+                                <div class="status-item">
+                                    <div class="status-indicator loading"></div>
+                                    <div class="status-info">
+                                        <span class="status-name">Live Weather</span>
+                                        <span class="status-value">Loading...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="weather-demo">
+                            <h2>Live Weather Demo</h2>
+                            <p>See OpenWeather API in action with real-time data:</p>
+                            <div class="weather-widget" id="weather-widget">
+                                <div class="weather-loading">
+                                    <div class="loading-spinner"></div>
+                                    <span>Loading weather data...</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="github-section">
+                            <h2>Repository Information</h2>
+                            <div class="github-card" id="github-card">
+                                <div class="github-header">
+                                    <svg class="github-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    <span>hgfghhccchgtjcdfhhhh/weatherwizard-app</span>
+                                    <a href="https://github.com/hgfghhccchgtjcdfhhhh/weatherwizard-app" target="_blank" class="external-link">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                            <polyline points="15,3 21,3 21,9"/>
+                                            <line x1="10" y1="14" x2="21" y2="3"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="github-stats" id="github-stats">
+                                    <div class="github-stat">
+                                        <span class="stat-label">Stars</span>
+                                        <span class="stat-value">Loading...</span>
+                                    </div>
+                                    <div class="github-stat">
+                                        <span class="stat-label">Forks</span>
+                                        <span class="stat-value">Loading...</span>
+                                    </div>
+                                    <div class="github-stat">
+                                        <span class="stat-label">Issues</span>
+                                        <span class="stat-value">Loading...</span>
+                                    </div>
+                                </div>
+                                <div class="github-activity" id="github-activity">
+                                    <h4>Recent Commits</h4>
+                                    <div class="commits-loading">Loading recent activity...</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="quick-start" class="doc-section">
+                        <h2 class="section-title">Quick Start</h2>
+                        <p>Get up and running with OpenWeather API integration in minutes.</p>
+                        
+                        <div class="code-example">
+                            <div class="code-header">
+                                <span class="code-lang">JavaScript</span>
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                            </div>
+                            <pre><code>// Using OpenWeather API directly
+const API_KEY = 'YOUR_OPENWEATHER_API_KEY';
+const BASE_URL = 'https://api.openweathermap.org/data/2.5';
+
+// Get current weather
+async function getCurrentWeather(city) {
+    const response = await fetch(
+        `${BASE_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`
+    );
+    const data = await response.json();
+    return data;
+}
+
+// Usage
+getCurrentWeather('New York').then(weather => {
+    console.log(`Temperature: ${weather.main.temp}°C`);
+    console.log(`Condition: ${weather.weather[0].description}`);
+});</code></pre>
+                        </div>
+
+                        <div class="alert alert-info">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 16v-4"/>
+                                <path d="M12 8h.01"/>
+                            </svg>
+                            <div>
+                                <strong>Need an API key?</strong> Sign up for free at 
+                                <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap.org</a>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="api" class="doc-section">
+                        <h2 class="section-title">API Reference</h2>
+                        
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="http-method get">GET</span>
+                                <code class="endpoint-url">https://api.openweathermap.org/data/2.5/weather</code>
+                            </div>
+                            <p class="endpoint-description">Get current weather conditions for a specific location using OpenWeather API.</p>
+                            
+                            <h4>Parameters</h4>
+                            <div class="params-table">
+                                <div class="param-row">
+                                    <div class="param-name">q</div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-desc">City name, state code and country code divided by comma</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name">appid</div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-desc">Your unique API key</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name">units</div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-desc">Units: standard, metric, imperial</div>
+                                </div>
+                            </div>
+
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span class="code-lang">OpenWeather API Response</span>
+                                </div>
+                                <pre><code>{
+  "coord": { "lon": -74.006, "lat": 40.7128 },
+  "weather": [
+    {
+      "id": 800,
+      "main": "Clear",
+      "description": "clear sky",
+      "icon": "01d"
+    }
+  ],
+  "main": {
+    "temp": 22.5,
+    "feels_like": 24.1,
+    "temp_min": 20.2,
+    "temp_max": 25.1,
+    "pressure": 1013,
+    "humidity": 65
+  },
+  "wind": {
+    "speed": 3.6,
+    "deg": 320
+  },
+  "name": "New York",
+  "sys": { "country": "US" }
+}</code></pre>
+                            </div>
+                        </div>
+
+                        <div class="api-endpoint">
+                            <div class="endpoint-header">
+                                <span class="http-method get">GET</span>
+                                <code class="endpoint-url">https://api.openweathermap.org/data/2.5/forecast</code>
+                            </div>
+                            <p class="endpoint-description">Get 5-day weather forecast with 3-hour intervals.</p>
+                            
+                            <h4>Parameters</h4>
+                            <div class="params-table">
+                                <div class="param-row">
+                                    <div class="param-name">q</div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-desc">City name for forecast data</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name">appid</div>
+                                    <div class="param-type">string</div>
+                                    <div class="param-desc">Your OpenWeather API key</div>
+                                </div>
+                                <div class="param-row">
+                                    <div class="param-name">cnt</div>
+                                    <div class="param-type">integer</div>
+                                    <div class="param-desc">Number of forecasts (max 40)</div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="examples" class="doc-section">
+                        <h2 class="section-title">Code Examples</h2>
+                        
+                        <div class="example-tabs">
+                            <button class="tab-btn active" onclick="showTab('javascript')">JavaScript</button>
+                            <button class="tab-btn" onclick="showTab('python')">Python</button>
+                            <button class="tab-btn" onclick="showTab('curl')">cURL</button>
+                        </div>
+
+                        <div id="javascript" class="tab-content active">
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span class="code-lang">JavaScript - Weather Dashboard</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>const WeatherWizard = require('weatherwizard-sdk');
+const client = new WeatherWizard(process.env.WEATHER_API_KEY);
+
+async function createWeatherDashboard(cities) {
+    const dashboard = {};
+    
+    for (const city of cities) {
+        try {
+            const weather = await client.getCurrentWeather({
+                location: city,
+                units: 'metric'
+            });
+            
+            dashboard[city] = {
+                temperature: weather.current.temperature,
+                condition: weather.current.condition,
+                humidity: weather.current.humidity
+            };
+        } catch (error) {
+            console.error(`Failed to get weather for ${city}:`, error);
+        }
+    }
+    
+    return dashboard;
+}
+
+// Usage
+const cities = ['London', 'Tokyo', 'New York', 'Sydney'];
+createWeatherDashboard(cities).then(dashboard => {
+    console.log('Weather Dashboard:', dashboard);
+});</code></pre>
+                            </div>
+                        </div>
+
+                        <div id="python" class="tab-content">
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span class="code-lang">Python - Weather Alerts</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code>import weatherwizard
+import asyncio
+
+client = weatherwizard.Client(api_key="YOUR_API_KEY")
+
+async def check_weather_alerts(locations):
+    alerts = []
+    
+    for location in locations:
+        weather = await client.get_current_weather(
+            location=location,
+            include_alerts=True
+        )
+        
+        if weather.alerts:
+            for alert in weather.alerts:
+                alerts.append({
+                    'location': location,
+                    'type': alert.type,
+                    'severity': alert.severity,
+                    'description': alert.description
+                })
+    
+    return alerts
+
+# Check for alerts in multiple locations
+locations = ["Miami, FL", "Houston, TX", "New Orleans, LA"]
+alerts = await check_weather_alerts(locations)
+
+for alert in alerts:
+    print(f"⚠️  {alert['location']}: {alert['description']}")</code></pre>
+                            </div>
+                        </div>
+
+                        <div id="curl" class="tab-content">
+                            <div class="code-example">
+                                <div class="code-header">
+                                    <span class="code-lang">cURL - Basic Request</span>
+                                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                </div>
+                                <pre><code># Get current weather
+curl -X GET "https://weatherwizard-app.onrender.com/api/weather/current" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -G \
+  -d "location=San Francisco, CA" \
+  -d "units=metric"
+
+# Get 7-day forecast
+curl -X GET "https://weatherwizard-app.onrender.com/api/weather/forecast" \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -G \
+  -d "location=London, UK" \
+  -d "days=7" \
+  -d "units=metric"</code></pre>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Documentation</h4>
+                    <ul>
+                        <li><a href="#quick-start">Quick Start</a></li>
+                        <li><a href="#api">API Reference</a></li>
+                        <li><a href="#guides">Guides</a></li>
+                        <li><a href="#examples">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#sdks">SDKs</a></li>
+                        <li><a href="#changelog">Changelog</a></li>
+                        <li><a href="https://github.com/hgfghhccchgtjcdfhhhh/weatherwizard-app">GitHub</a></li>
+                        <li><a href="#support">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="https://weatherwizard-app.onrender.com">WeatherWizard App</a></li>
+                        <li><a href="https://github.com/hgfghhccchgtjcdfhhhh/weatherwizard-app/issues">Report Issues</a></li>
+                        <li><a href="https://github.com/hgfghhccchgtjcdfhhhh/weatherwizard-app/discussions">Discussions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WeatherWizard. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
